@@ -1,24 +1,16 @@
 {
-  "name": "nodegraphql",
-  "version": "1.0.0",
-  "description": "GraphQL API com Node",
-  "main": "app/server.js",
+  "name": "graphql-api",
+  "version": "0.1.0",
+  "description": "GraphQL API com node",
+  "author": "Stanley Gomes <stanleygomesdasilva@gmail.com>",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stanleygomes/node-graphql.git"
-  },
-  "author": "Stanley Gomes",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stanleygomes/node-graphql/issues"
-  },
-  "homepage": "https://github.com/stanleygomes/node-graphql#readme",
   "dependencies": {
-    "apollo-server": "^2.3.1",
-    "graphql-tools": "^4.0.3",
-    "mongoose": "^5.4.3"
-  }
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2"
+  },
+  "devDependencies": {}
 }
