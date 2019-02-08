@@ -20,6 +20,16 @@ let neighborList = [
         id: 4,
         name: 'Mordor',
         rating: 1
+    },
+    {
+        id: 5,
+        name: 'Gotham',
+        rating: 3
+    },
+    {
+        id: 6,
+        name: 'BedRock',
+        rating: 1
     }
 ]
 
