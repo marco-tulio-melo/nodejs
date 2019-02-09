@@ -11,3 +11,5 @@
 
 [Features => características do objeto]
 [Training data => dados de exemplo com exemplos de onde se quer chegar]
+
+## Redes neurais
