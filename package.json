@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-mocha",
+  "version": "1.0.0",
+  "description": "Testing a node app with mocha and chai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanleygomes/nodejs-mocha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanleygomes/nodejs-mocha/issues"
+  },
+  "homepage": "https://github.com/stanleygomes/nodejs-mocha#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mocha": "^6.0.2"
+  }
+}
