@@ -4,6 +4,8 @@
   "description": "Testing a node app with mocha and chai",
   "main": "app/index.js",
   "scripts": {
+    "dev": "nodemon --inspect app/index.js",
+    "prod": "pm2 start app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "mocha": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
