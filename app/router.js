@@ -1,18 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
-const main = require('./services/main')
+const user = require('./services/user')
 
-router.get('/', (req, res) => {
-  console.log('teste')
-  res.send('hello world')
+// middleware em todas as rotas
+router.use((req, res, next) => {
+  console.log('Before: ', Date.now())
+  next()
+  console.log('After: ', Date.now())
 })
 
-// router.get('/main', (req, res) => {
-//   console.log('teste')
-//   res.send('hello world')
-// })
-
-router.use('/main', main)
+router.use('/user', user)
 
 module.exports = router
