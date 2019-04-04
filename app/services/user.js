@@ -15,7 +15,7 @@ router.get('', (req, res) => {
   console.log('d eh: ' + typeof d)
 
   console.log("Amarildo" < "Zenaide")
-  console.log("Zenaide" < "america")
+  console.log("Android" > "ios")
 
   console.log('null == undefined => ' + (null == undefined));
   console.log('null == 0 => ' + (null == 0));
@@ -28,9 +28,33 @@ router.get('', (req, res) => {
   console.log(Number.isNaN(c))
 
   // console.log(userBO.test)
-  res.send('hello world 2')
+  res.send('Primeira aula')
 }).get('/teste2', (req, res) => {
-  console.log('teste 2')
+
+  let x = 0
+
+  if (true) {
+    let y = 10
+    var z = 5
+
+    console.log(x, y, z)
+  }
+
+  // if (typeof y != null) {
+  //   console.log(x, y, z)
+  // } else {
+  //   console.log('Y nao foi definido')
+  // }
+
+  const fn = (x, y) => {
+    return x * y
+  }
+
+  const fn2 = x => x * x
+
+  console.log('Resultado (x, y): ' + fn(1, 2))
+  console.log('Resultado (x): ' + fn2(9))
+
   res.send('hello world 2')
 })
 
