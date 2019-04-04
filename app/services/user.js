@@ -27,10 +27,6 @@ router.get('', (req, res) => {
   console.log(`a / b = ${c}`)
   console.log(Number.isNaN(c))
 
-  // console.log(userBO.test)
-  res.send('Primeira aula')
-}).get('/teste2', (req, res) => {
-
   let x = 0
 
   if (true) {
@@ -54,6 +50,48 @@ router.get('', (req, res) => {
 
   console.log('Resultado (x, y): ' + fn(1, 2))
   console.log('Resultado (x): ' + fn2(9))
+
+  let entry = [1,2,3,4,5]
+
+  entry.unshift(0)
+  entry.push(6)
+
+  for (let a of entry) {
+    console.log(`valor do vetor: ${a}`)
+  }
+
+  const remove = (list, pos) => {
+    return list.slice(0, pos).concat(list.slice(pos + 1, list.lenght))
+  }
+
+  console.log(`remove(2) ${remove(entry, 2)}`)
+
+  const add = (list, ...x) => {
+    for(let i of x) {
+      list.push(i)
+    }
+    return list
+  }
+
+  console.log(`add(7) ${add(entry, 7, 8, 9, 10)}`)
+
+  const sum = (...elements) => {
+    return elements.reduce((sum, item) => sum + item)
+  }
+
+  console.log(`sum(1,2,3,4) = ${sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)}`)
+
+  const sumOdds = (...elements) => {
+    return elements.filter((item) => item && item > 0 && item % 2 != 0)
+      .reduce((sum, item) => sum + item)
+  }
+
+  console.log(`sumOdds(1,2,3,4) = ${sumOdds(1,2,3,4,5)}`)
+
+  // console.log(userBO.test)
+  res.send('Primeira aula')
+}).get('/teste2', (req, res) => {
+
 
   res.send('hello world 2')
 })
