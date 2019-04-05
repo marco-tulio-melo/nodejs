@@ -88,11 +88,67 @@ router.get('', (req, res) => {
 
   console.log(`sumOdds(1,2,3,4) = ${sumOdds(1,2,3,4,5)}`)
 
-  // console.log(userBO.test)
+  let filtered = entry.filter((item) => item && item % 2 == 0)
+
+  console.log(`Filtrando os pares ${filtered}`)
+
+  let duplicate = entry.map((item) => item * 2)
+
+  console.log(`Dobro dos itens: ${duplicate}`)
+
+  let totalSum = entry.reduce((sum, item) => sum + item)
+
+  console.log(`Soma total: ${totalSum}`)
+
+  let arrays = [[1,2,3], [4,5], [6]]
+
+  const joinArrays = (array) => {
+    let result = []
+    // return array.map((...item) => )
+  }
+
+  const myObj = {
+    name: `fulano`,
+    idade: 22,
+    weight: 70,
+    height: 1.8,
+    calculateIMC: (weight, height) => weight / (height * height)
+  }
+
+  let empty = {}
+
+  console.log(`empty: ${empty.toString}`)
+  console.log(`empty: ${empty.toString()}`)
+
+  console.log(`Prototipo: ${Object.getPrototypeOf(myObj)}`)
+
+  class Someone {
+    constructor(type) {
+      this.type = type;
+    }
+
+    show(name) {
+      console.log(`${name} is a ${this.type}`)
+    }
+  }
+
+  let someoneP = new Someone('man')
+
+  someoneP.show('Alberto')
+
+  let ages = new Map()
+
+  ages.set('fulano', 22)
+  ages.set('ciclano', 12)
+  ages.set('beltrano', 30)
+
+  console.log(`Idade do fulano eh: ${ages.get('fulano')}`)
+  console.log(`Tem beltrano no grupo? ${ages.has('beltrano')}`)
+  console.log(`Tem metano no grupo? ${ages.has('metano')}`)
+  console.log(`Tem metano no grupo? ${ages.keys}`)
+
   res.send('Primeira aula')
 }).get('/teste2', (req, res) => {
-
-
   res.send('hello world 2')
 })
 
