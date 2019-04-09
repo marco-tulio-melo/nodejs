@@ -147,9 +147,55 @@ router.get('', (req, res) => {
   console.log(`Tem metano no grupo? ${ages.has('metano')}`)
   console.log(`Tem metano no grupo? ${ages.keys}`)
 
-  res.send('Primeira aula')
+  useStrict = () => {
+    "use strict"
+    for (counter = 0; counter < 10; counter++) {
+      console.log('Hello!')
+    }
+  }
+
+  try {
+    useStrict()
+  } catch (error) {
+    // console.log(error)
+  }
+
+  let re1 = new RegExp('abc')
+  let re2 = /abc/
+  let re3 = /abc/
+
+  console.log(/abc/.test('abcde'))
+  console.log(/abc/.test('abxde'))
+
+  const weekDay = function () {
+    const names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    return {
+      name(number) {
+        return names[number]
+      },
+      number(name) {
+        return names.indexOf(name)
+      }
+    }
+  }()
+
+  console.log(`module: ${weekDay.name(0)}`)
+
+  const abc = 1
+  evalReturn = (code) => {
+    eval(code)
+
+    return abc
+  }
+
+  console.log(`Eval: ${evalReturn('var abc = 5')}`)
+
+  console.log(abc)
+
+  res.send('Primeira aula!')
 }).get('/teste2', (req, res) => {
-  res.send('hello world 2')
+  res.send(`teste`)
 })
 
 module.exports = router
