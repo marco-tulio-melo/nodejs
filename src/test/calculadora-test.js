@@ -2,6 +2,8 @@ const chai = require('chai')
 const calc = require('../examples/calc')
 
 const assert = chai.assert
+const expect = chai.expect
+const should = chai.should()
 
 describe('TDD de operacoes de calculadora', () => {
   it('Teste: deve somar dois numeros', () => {
@@ -13,6 +15,10 @@ describe('TDD de operacoes de calculadora', () => {
   })
 
   it('Teste: divisao por zero deve ser validada', () => {
-    assert.equal(calc.divide(2, 0), 0)
+    expect(calc.divide(2, 0)).to.equal(0)
+  })
+
+  it('Teste: deve multiplica 2 numeros', () => {
+    (calc.multiply(2, 0)).should.equal(0)
   })
 })
