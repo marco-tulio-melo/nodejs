@@ -1,0 +1,23 @@
+{
+  "name": "node-machine-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "classification.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanleygomes/node-machine-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanleygomes/node-machine-learning/issues"
+  },
+  "homepage": "https://github.com/stanleygomes/node-machine-learning#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.15.1"
+  }
+}
