@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>Node com GraphQL</title>
+
+    </head>
+    <body>
+
+    <script>
+        const insert = `mutation insertPost($title: String!, $active: Boolean!, $user_id: Int!) {
+                createPost(title: $title, active: $active, user_id: $user_id) {
+                    id
+                }
+            }
+        `;
+
+        const getData = `{
+            posts {
+                data {
+                    title,
+                    active
+                }
+            },
+            users_paginated(page: 1) {
+                current_page,
+                data {
+                    name,
+                    id,
+                    posts {
+                        id,
+                        title,
+                        active
+                    }
+                },
+                total,
+                per_page
+            }
+        }
+        `;
+
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        fetch('http://localhost:4000/graphql', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({
+                query: getData,
+                variables: {
+                    "title": "Artigo 7",
+                    "active": true,
+                    "user_id": 13
+                }
+            })
+        });
+        </script>
+    </body>
+</html>
