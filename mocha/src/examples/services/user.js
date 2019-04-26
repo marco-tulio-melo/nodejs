@@ -20,7 +20,7 @@ router.get('', (req, res) => {
   console.log('null == undefined => ' + (null == undefined));
   console.log('null == 0 => ' + (null == 0));
 
-  // coalesce like in javascript
+  // "coalesce like" in javascript
   console.log(null || "user")
   console.log("Agnes" || "user")
 
