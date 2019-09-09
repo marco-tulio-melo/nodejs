@@ -1,0 +1,37 @@
+{
+  "development": {
+    "database": {
+      "host": "localhost",
+      "port": "3308",
+      "database": "skywalker",
+      "user": "skywalker",
+      "password": "skywalker",
+      "max": 15
+    }
+  },
+  "production": {
+    "database": {
+      "host": "mysql669.umbler.com",
+      "port": "41890",
+      "database": "skywalker",
+      "user": "skywalker",
+      "password": "jgo4jo4031a",
+      "max": 15
+    }
+  },
+  "server": {
+    "port": 3000
+  },
+  "showQuery": true,
+  "sqlDir": "./src/sql/",
+  "baseEndpoint": "/api/v1",
+  "i18n": {
+    "locales": [
+      "pt-BR",
+      "en"
+    ],
+    "defaultLocale": "pt-BR",
+    "directory": "./src/utils/locales",
+    "autoReload": true
+  }
+}

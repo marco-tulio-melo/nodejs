@@ -1,0 +1,32 @@
+# Docker
+/server/storage/mariadb/*
+/server/logs/apache2/*
+/server/logs/mysql/*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+package-lock.json
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
