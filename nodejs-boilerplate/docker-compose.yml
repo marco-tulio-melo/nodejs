@@ -1,0 +1,37 @@
+version: '3.1'
+services:
+  mariadb:
+    image: mariadb
+    container_name: nodejs-mariadb
+    restart: always
+    ports:
+      - 3308:3306
+    environment:
+      - MYSQL_DATABASE=skywalker
+      - MYSQL_USER=skywalker
+      - MYSQL_PASSWORD=skywalker
+      - MYSQL_ROOT_PASSWORD=skywalker
+    volumes:
+      - ./server/storage/mariadb:/var/lib/mysql
+      # - ./server/config/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+  flyway:
+    container_name: nodejs-flyway
+    image: boxfuse/flyway:5.2.4
+    command: -url=jdbc:mysql://nodejs-mariadb/skywalker -schemas=skywalker -user=skywalker -password=skywalker -connectRetries=60 migrate
+    volumes:
+      - ./server/migrations:/flyway/sql
+    depends_on:
+      - mariadb
+  api:
+    build: ./server/bin/nodejs
+    image: api
+    container_name: nodejs-api
+    environment:
+      - NODE_ENV=development
+    command: yarn dev
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/app
+    depends_on:
+      - flyway
