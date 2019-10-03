@@ -1,5 +1,5 @@
-const ola = () => {
-    console.log('ola node')
+const arg = () => {
+    console.log('ola caro amigo node')
 }
 
-setInterval(ola, 1000)
+setInterval(arg, 1000)
